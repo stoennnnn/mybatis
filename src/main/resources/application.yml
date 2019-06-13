@@ -1,0 +1,15 @@
+server:
+  port: 9999
+#配置数据库
+spring:
+  datasource:
+    jdbc:
+      drive: com.mysql.cj.jdbc.Driver
+    username: zql
+    password: qaz123456
+    url: jdbc:mysql://47.101.207.245:3306/wxarticle?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+mybatis:
+# 配置mapper xml文件路径
+#配置映射类所在包名
+  mapper-locations: classpath:mapping/**//*.xml
+  type-aliases-package: com.zql.model
