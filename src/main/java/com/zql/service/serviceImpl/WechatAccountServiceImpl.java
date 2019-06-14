@@ -1,5 +1,8 @@
 package com.zql.service.serviceImpl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.zql.mapper.WechatAccountMapper;
 import com.zql.model.WechatAccount;
 import com.zql.model.WechatAccountExample;
@@ -17,11 +20,11 @@ public class WechatAccountServiceImpl implements WechatAccountService{
     @Autowired
     private WechatAccountMapper wechatAccountMapper;
     @Override
-    public WechatAccount selectByid(int accountId) {
+    public PageInfo<WechatAccount> selectByid(int pageNum) {
+        PageHelper.startPage(pageNum,4);
         WechatAccountExample example = new WechatAccountExample();
-        WechatAccountExample.Criteria criteria = example.createCriteria();
-        criteria.andAccountIdEqualTo(accountId);
-        List<WechatAccount> wechatAccounts = wechatAccountMapper.selectByExample(example);
-        return null;
+        List<WechatAccount> accounts = wechatAccountMapper.selectByExample(example);
+        PageInfo<WechatAccount>  pageInfo = new PageInfo<>(accounts);
+        return pageInfo;
     }
 }

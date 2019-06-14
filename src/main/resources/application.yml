@@ -9,7 +9,13 @@ spring:
     password: qaz123456
     url: jdbc:mysql://47.101.207.245:3306/wxarticle?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
 mybatis:
-# 配置mapper xml文件路径
-#配置映射类所在包名
+  # 配置mapper xml文件路径
   mapper-locations: classpath:mapping/**//*.xml
+  #配置映射类所在包名
   type-aliases-package: com.zql.model
+#pagehelper分页插件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSqle
