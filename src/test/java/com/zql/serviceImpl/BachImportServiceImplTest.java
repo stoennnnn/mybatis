@@ -1,4 +1,4 @@
-package com.zql.service.serviceImpl;
+package com.zql.serviceImpl;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,16 +7,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * Created by 张启磊 on 2019-6-14.
+ * @author: create
+ * @description:
+ * @date: 2019-8-22
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class WechatAccountServiceImplTest {
+public class BachImportServiceImplTest {
     @Autowired
-    private WechatAccountServiceImpl service;
+    private BachImportServiceImpl service;
     @Test
-    public void selectByid() throws Exception {
-//        service.selectByid();
+    public void batchImport() throws Exception {
+//        service.batchImport(  )
     }
 
 }

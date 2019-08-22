@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <!-- 数据库驱动:选择你的本地硬盘上面的数据库驱动包-->
-    <!--<classPathEntry  location="C:\Users\38213\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar"/>-->
-    <classPathEntry  location="C:\Users\26725\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar"/>
+    <classPathEntry  location="C:\Users\38213\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar"/>
+    <!--<classPathEntry  location="C:\Users\26725\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar"/>-->
     <context id="DB2Tables"  targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressDate" value="true"/>
@@ -19,9 +19,18 @@
                         <!--userId="${spring.datasource.username}"-->
                         <!--password="${spring.datasource.password}">-->
         <!--</jdbcConnection>-->
-        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://47.101.207.245:3306/wxarticle?characterEncoding=utf-8"
-                        userId="zql" password="qaz123456">
+        <!--阿里云-->
+        <!--<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://47.101.207.245:3306/wxarticle?characterEncoding=utf-8"-->
+                        <!--userId="zql" password="qaz123456">-->
+        <!--</jdbcConnection>-->
+        <!--知识管理-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://128.160.184.19:3306/ekmsdb?characterEncoding=utf-8"
+                        userId="ekms" password="ekms">
         </jdbcConnection>
+        <!--本地-->
+        <!--<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/album?characterEncoding=utf-8"-->
+                      <!--userId="root" password="qaz123456">-->
+        <!--</jdbcConnection>-->
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
@@ -39,6 +48,8 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-        <table tableName="wechat_account" domainObjectName="WechatAccount" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <!--<table tableName="wechat_account" domainObjectName="WechatAccount" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>-->
+        <table tableName="psn_score_stat" domainObjectName="PsnScoreStat" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="psn_score" domainObjectName="PsnScore" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 </generatorConfiguration>
