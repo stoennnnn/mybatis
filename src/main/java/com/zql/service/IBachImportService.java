@@ -11,6 +11,4 @@ import java.io.IOException;
  */
 public interface IBachImportService {
     boolean batchImport(String fileName, MultipartFile file) throws IOException;
-    void test();
-    void test2();
 }
