@@ -1,1 +1,1 @@
-package com.zql.mapper;public interface IPersonMapper {}
+package com.zql.mapper;import org.apache.ibatis.annotations.Mapper;import java.util.List;@Mapperpublic interface IPersonMapper {    void addUsers(List users);}

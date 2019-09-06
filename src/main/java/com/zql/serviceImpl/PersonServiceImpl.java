@@ -1,1 +1,1 @@
-package com.zql.serviceImpl;public class PersonServiceImpl {}
+package com.zql.serviceImpl;import com.zql.mapper.IPersonMapper;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Service;import java.util.List;@Servicepublic class PersonServiceImpl {    @Autowired    private IPersonMapper iPersonMapper;    public void addPersons(List persons){        iPersonMapper.addUsers(persons);    }}
